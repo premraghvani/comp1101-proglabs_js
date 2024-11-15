@@ -19,9 +19,24 @@ function wordReset(){
 // adds new words
 function updateWords(){
     verbs = document.getElementById("verbs").value.split("\n")
+    if(document.getElementById("verbs").value == ""){
+        verbs = []
+    }
+
     nouns = document.getElementById("nouns").value.split("\n")
+    if(document.getElementById("nouns").value == ""){
+        nouns = []
+    }
+
     adjectives = document.getElementById("adjectives").value.split("\n")
+    if(document.getElementById("adjectives").value == ""){
+        adjectives = []
+    }
+
     adverbs = document.getElementById("adverbs").value.split("\n")
+    if(document.getElementById("adverbs").value == ""){
+        adverbs = []
+    }
 }
 
 

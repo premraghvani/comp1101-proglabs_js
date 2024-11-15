@@ -5,8 +5,32 @@
     <body>
         <button id='squeeze'>Squeeze me</button>
 
+        <br>
+
         <button id="sentenceGenButton">Generate Sentence</button>
+
+        <br>
+
         <blockquote style="display: none;" id="randSent"></blockquote>
+
+        <br>
+
+        <label for="nouns">Nouns:</label>
+        <textarea id="nouns"></textarea>
+
+        <label for="verbs">Verbs:</label>
+        <textarea id="verbs"></textarea>
+
+        <label for="adverbs">Adverbs:</label>
+        <textarea id="adverbs"></textarea>
+
+        <label for="adjectives">Adjectives:</label>
+        <textarea id="adjectives"></textarea>
+
+        <br>
+
+        <button onclick="wordReset()">Reset to Default Words</button>
+        <button onclick="updateWords()">Update Word Bank</button>
     </body>
 </html>
 <script src="script.js"></script>

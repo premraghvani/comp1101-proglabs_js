@@ -72,3 +72,34 @@ document.getElementById("sentenceGenButton").addEventListener("click",generateSe
 
 // on load, resets words
 wordReset();
+
+// haiku gen, random words
+function haikuGen(){
+    let wordbank = {
+        "1":["cat", "dog", "hat", "run", "sun", "bat", "man", "frog", "tree", "fish", "brick", "flame", "jump", "sky", "bird", "rock", "plane", "ship", "star", "grape"],
+        "2":["apple", "candle", "purple", "happy", "river", "baby", "magic", "dancer", "summer", "parrot"],
+        "3":["chocolate", "elephant", "beautiful", "family", "umbrella", "dangerous", "wonderful", "happiness", "tomorrow", "festival"],
+        "4":["celebration", "determination", "imagination", "explanation", "destination", "organization", "transportation", "revolutionary", "appreciation", "education"]
+    }
+
+    let poem = `${generateWordsRow(5,wordbank)}<br>${generateWordsRow(7,wordbank)}<br>${generateWordsRow(5,wordbank)}`;
+
+    let generatedHaiku = document.getElementById("generatedHaiku");
+    generatedHaiku.style.display = "block";
+    generatedHaiku.innerHTML = poem;
+    
+}
+
+// generates a row of words
+function generateWordsRow(lineSyllables,wordsXSyllables){
+    let line = ""
+    let syllablesRemain = lineSyllables
+    while(syllablesRemain >=1){
+        let maxGen = syllablesRemain; if(maxGen>4){maxGen=4};
+        let nextWordSyllables = generateRandomNum(maxGen)+1
+        let subset = wordsXSyllables[nextWordSyllables.toString()]
+        line += `${subset[generateRandomNum(subset.length)]} `
+        syllablesRemain -= nextWordSyllables;
+    }
+    return line;
+}

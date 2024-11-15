@@ -1,5 +1,3 @@
-let button = document.getElementById("squeeze");
-
 // words generated from getrandomthings.com, put into ChatGPT to convert into array
 let verbs = []; let adverbs = []; let adjectives = []; let nouns = [];
 
@@ -68,11 +66,6 @@ function generateRandomNum(maxExclusive){
     let n = Math.floor(Math.random() * maxExclusive)
     return n;
 }
-
-function shout(){
-    alert("... and I squeak");
-}
-button.addEventListener("click", shout);
 
 // adds listener to sentence generator button
 document.getElementById("sentenceGenButton").addEventListener("click",generateSentence)

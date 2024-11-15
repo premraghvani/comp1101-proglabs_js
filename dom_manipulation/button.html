@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head><title>JavaScript Button Example</title></head>
+    <head>
+        <title>Random Sentences</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
     <body>
-        <button id='squeeze'>Squeeze me</button>
+        <h1>Random Sentence Generator</h1>
 
+        <div class="container">
+            <h2>Generate Sentences Here</h2>
+            <button id="sentenceGenButton">Generate Sentence</button>
+
+            <br>
+
+            <blockquote style="display: none;" id="randSent"></blockquote>
+        </div>
         <br>
 
-        <button id="sentenceGenButton">Generate Sentence</button>
-
-        <br>
-
-        <blockquote style="display: none;" id="randSent"></blockquote>
-
-        <br>
-
-        <label for="nouns">Nouns:</label>
-        <textarea id="nouns"></textarea>
-
-        <label for="verbs">Verbs:</label>
-        <textarea id="verbs"></textarea>
-
-        <label for="adverbs">Adverbs:</label>
-        <textarea id="adverbs"></textarea>
-
-        <label for="adjectives">Adjectives:</label>
-        <textarea id="adjectives"></textarea>
-
-        <br>
-
-        <button onclick="wordReset()">Reset to Default Words</button>
-        <button onclick="updateWords()">Update Word Bank</button>
+        <div class="container">
+            <h2>Adjust my Words</h2>
+            <table id="legends">
+                <tr>
+                    <td><label for="nouns">Nouns:</label></td>
+                    <td><label for="verbs">Verbs:</label></td>
+                    <td><label for="adverbs">Adverbs:</label></td>
+                    <td><label for="adjectives">Adjectives:</label></td>
+                </tr>        
+                <tr>
+                    <td><textarea id="nouns"></textarea></td>
+                    <td><textarea id="verbs"></textarea></td>
+                    <td><textarea id="adverbs"></textarea></td>
+                    <td><textarea id="adjectives"></textarea></td>
+                </tr>
+            </table>
+    
+            <button onclick="wordReset()">Reset to Default Words</button>
+            <button onclick="updateWords()">Update Word Bank</button>
+        </div>
     </body>
 </html>
 <script src="script.js"></script>
